@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Study Planner - DCIT 323 Lab 2 | 22401937</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>📚 Study Planner</h1>
+      <p>DCIT 323 Lab 2 | Student: Lincoln Alazoe | ID: 22401937</p>
+      <div class="progress-box">
+        <span id="progressText">0% Complete</span>
+        <div class="progress-bar"><div id="progressFill"></div></div>
+      </div>
+    </header>
+
+    <form id="taskForm">
+      <input type="text" id="title" placeholder="Task title e.g. DCIT 323 Assignment" required>
+      <input type="text" id="course" placeholder="Course e.g. DCIT 323">
+      <input type="date" id="dueDate" required>
+      <select id="priority">
+        <option value="High">High Priority</option>
+        <option value="Medium" selected>Medium Priority</option>
+        <option value="Low">Low Priority</option>
+      </select>
+      <button type="submit">Add Task</button>
+    </form>
+
+    <div class="filters">
+      <button onclick="filterTasks('All')">All</button>
+      <button onclick="filterTasks('Pending')">Pending</button>
+      <button onclick="filterTasks('Completed')">Completed</button>
+      <button onclick="filterTasks('Overdue')">Overdue</button>
+      <button onclick="sortByPriority()">Sort by Priority</button>
+    </div>
+
+    <div id="taskList"></div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
